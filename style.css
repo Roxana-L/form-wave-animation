@@ -26,6 +26,7 @@ body {
 .container a {
   text-decoration: none;
   color: lightblue;
+  transition: all 200ms ease-in-out;
 }
 .btn {
   cursor: pointer;
@@ -45,8 +46,9 @@ body {
 .btn:active {
   transform: scale(0.98);
 }
-.btn:hover {
-  filter: brightness(90%);
+.btn:hover,
+.container a:hover {
+  filter: brightness(85%);
 }
 .text {
   margin-top: 30px;
@@ -69,4 +71,21 @@ body {
 .form-control input:focus,
 .form-control input:valid {
   outline: 0;
+  border-bottom-color: lightblue;
+}
+.form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+}
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: lightblue;
+  transform: translateY(-30px);
 }
